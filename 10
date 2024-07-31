@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <ctype.h>
+// Function prototypes
+void convertCase(char *str);
+int main() {
+ // Predefined input string
+ char inputString[] = "Hello World! ARM Microcontrollers are Fun.";
+ // Display the original string
+ printf("Original String: %s\n", inputString);
+ // Convert the case of characters in the string
+ convertCase(inputString);
+ // Display the converted string
+ printf("Converted String: %s\n", inputString);
+ return 0;
+}
+// Function to convert uppercase characters to lowercase and vice versa
+void convertCase(char *str) {
+ while (*str) {
+ if (islower(*str)) {
+ *str = toupper(*str);
+ } else if (isupper(*str)) {
+ *str = tolower(*str);
+ }
+ str++;
+ }
+}
